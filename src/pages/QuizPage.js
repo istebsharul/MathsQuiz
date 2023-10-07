@@ -8,7 +8,6 @@ function Quiz({ userName }) {
     const [score, setScore] = useState(0);
     const [showResults, setShowResults] = useState(false);
     const navigate = useNavigate();
-    // const [userName, setUserName] = useState(savedUserName || "");
 
 
     const questions = [
