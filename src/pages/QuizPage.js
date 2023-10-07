@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "./navbarpage";
 import Results from "./Result";
 function Quiz({ userName }) {
@@ -8,55 +8,23 @@ function Quiz({ userName }) {
     const [score, setScore] = useState(0);
     const [showResults, setShowResults] = useState(false);
     const navigate = useNavigate();
+    const [data, setData] = useState([]);
 
+    useEffect(() => {
+        // Define the API URL
+        const apiUrl = "http://localhost:8000/questions"; // Replace with your API URL
 
-    const questions = [
-        {
-            text: "What is the capital of America?",
-            options: [
-                { id: 0, text: "New York City", isCorrect: false },
-                { id: 1, text: "Boston", isCorrect: false },
-                { id: 2, text: "Santa Fe", isCorrect: false },
-                { id: 3, text: "Washington DC", isCorrect: true },
-            ],
-        },
-        {
-            text: "What year was the Constitution of America written?",
-            options: [
-                { id: 0, text: "1787", isCorrect: true },
-                { id: 1, text: "1776", isCorrect: false },
-                { id: 2, text: "1774", isCorrect: false },
-                { id: 3, text: "1826", isCorrect: false },
-            ],
-        },
-        {
-            text: "Who was the second president of the US?",
-            options: [
-                { id: 0, text: "John Adams", isCorrect: true },
-                { id: 1, text: "Paul Revere", isCorrect: false },
-                { id: 2, text: "Thomas Jefferson", isCorrect: false },
-                { id: 3, text: "Benjamin Franklin", isCorrect: false },
-            ],
-        },
-        {
-            text: "What is the largest state in the US?",
-            options: [
-                { id: 0, text: "California", isCorrect: false },
-                { id: 1, text: "Alaska", isCorrect: true },
-                { id: 2, text: "Texas", isCorrect: false },
-                { id: 3, text: "Montana", isCorrect: false },
-            ],
-        },
-        {
-            text: "Which of the following countries DO NOT border the US?",
-            options: [
-                { id: 0, text: "Canada", isCorrect: false },
-                { id: 1, text: "Russia", isCorrect: true },
-                { id: 2, text: "Cuba", isCorrect: true },
-                { id: 3, text: "Mexico", isCorrect: false },
-            ],
-        },
-    ];
+        // Make a GET request to the API using the fetch function
+        fetch(apiUrl)
+            .then((response) => response.json()) // Parse the response as JSON
+            .then((apiData) => {
+                // Update the state variable with the fetched data
+                setData(apiData);
+            })
+            .catch((error) => {
+                console.error("Error fetching data:", error);
+            });
+    }, []);
 
     // Helper Functions (move these from the App component)
     const optionClicked = (isCorrect) => {
@@ -66,7 +34,7 @@ function Quiz({ userName }) {
             setScore(score + 1);
         }
 
-        if (currentQuestion + 1 < questions.length) {
+        if (currentQuestion + 1 < data.length) {
             setCurrentQuestion(currentQuestion + 1);
         } else {
             setShowResults(true); // Show results when all questions are answered
@@ -80,6 +48,7 @@ function Quiz({ userName }) {
         setCurrentQuestion(0);
         setScore(0);
     };
+
     const quit = () => {
         // ... (same restartGame function)
         setShowResults(false); // Reset showResults state
@@ -90,7 +59,7 @@ function Quiz({ userName }) {
 
     // Add a conditional rendering section for results
     if (showResults) {
-        return <Results score={score} totalQuestions={questions.length} restartGame={restartGame} />;
+        return <Results score={score} totalQuestions={data.length} restartGame={restartGame} />;
         // return (
         //     <div className="final-results">
         //         <h2>Quiz Results</h2>
@@ -99,9 +68,12 @@ function Quiz({ userName }) {
         //     </div>
         // );
     }
+    console.log(data.length)
+    // console.log(data.length)
+    console.log(currentQuestion)
 
     // Ensure that the currentQuestion is within the valid range
-    if (currentQuestion < 0 || currentQuestion >= questions.length) {
+    if (currentQuestion < 0 || currentQuestion >= data.length) {
         return (
             <div className="question-card">
                 <p>No more questions to display.</p>
@@ -110,7 +82,7 @@ function Quiz({ userName }) {
     }
 
     // Ensure that the questions array is not empty
-    if (questions.length === 0) {
+    if (data.length === 0) {
         return (
             <div className="question-card">
                 <p>No questions available.</p>
@@ -119,7 +91,7 @@ function Quiz({ userName }) {
     }
 
     // Access the current question safely
-    const currentQuestionData = questions[currentQuestion];
+    const currentQuestionData = data[currentQuestion];
 
     return (
         <>

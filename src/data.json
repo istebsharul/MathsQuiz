@@ -1,0 +1,254 @@
+{
+    "questions": [
+        {
+            "text": "What is the capital of America?",
+            "options": [
+                {
+                    "id": 0,
+                    "text": "New York City",
+                    "isCorrect": false
+                },
+                {
+                    "id": 1,
+                    "text": "Boston",
+                    "isCorrect": false
+                },
+                {
+                    "id": 2,
+                    "text": "Santa Fe",
+                    "isCorrect": false
+                },
+                {
+                    "id": 3,
+                    "text": "Washington DC",
+                    "isCorrect": true
+                }
+            ]
+        },
+        {
+            "text": "What year was the Constitution of America written?",
+            "options": [
+                {
+                    "id": 0,
+                    "text": "1787",
+                    "isCorrect": true
+                },
+                {
+                    "id": 1,
+                    "text": "1776",
+                    "isCorrect": false
+                },
+                {
+                    "id": 2,
+                    "text": "1774",
+                    "isCorrect": false
+                },
+                {
+                    "id": 3,
+                    "text": "1826",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "text": "Who was the second president of the US?",
+            "options": [
+                {
+                    "id": 0,
+                    "text": "John Adams",
+                    "isCorrect": true
+                },
+                {
+                    "id": 1,
+                    "text": "Paul Revere",
+                    "isCorrect": false
+                },
+                {
+                    "id": 2,
+                    "text": "Thomas Jefferson",
+                    "isCorrect": false
+                },
+                {
+                    "id": 3,
+                    "text": "Benjamin Franklin",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "text": "What is the largest state in the US?",
+            "options": [
+                {
+                    "id": 0,
+                    "text": "California",
+                    "isCorrect": false
+                },
+                {
+                    "id": 1,
+                    "text": "Alaska",
+                    "isCorrect": true
+                },
+                {
+                    "id": 2,
+                    "text": "Texas",
+                    "isCorrect": false
+                },
+                {
+                    "id": 3,
+                    "text": "Montana",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "text": "Which of the following countries DO NOT border the US?",
+            "options": [
+                {
+                    "id": 0,
+                    "text": "Canada",
+                    "isCorrect": false
+                },
+                {
+                    "id": 1,
+                    "text": "Russia",
+                    "isCorrect": true
+                },
+                {
+                    "id": 2,
+                    "text": "Cuba",
+                    "isCorrect": true
+                },
+                {
+                    "id": 3,
+                    "text": "Mexico",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "text": "What is the chemical symbol for gold?",
+            "options": [
+                {
+                    "id": 0,
+                    "text": "Au",
+                    "isCorrect": true
+                },
+                {
+                    "id": 1,
+                    "text": "Ag",
+                    "isCorrect": false
+                },
+                {
+                    "id": 2,
+                    "text": "Hg",
+                    "isCorrect": false
+                },
+                {
+                    "id": 3,
+                    "text": "Fe",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "text": "Which planet is known as the 'Red Planet'?",
+            "options": [
+                {
+                    "id": 0,
+                    "text": "Venus",
+                    "isCorrect": false
+                },
+                {
+                    "id": 1,
+                    "text": "Mars",
+                    "isCorrect": true
+                },
+                {
+                    "id": 2,
+                    "text": "Jupiter",
+                    "isCorrect": false
+                },
+                {
+                    "id": 3,
+                    "text": "Saturn",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "text": "Who painted the 'Mona Lisa'?",
+            "options": [
+                {
+                    "id": 0,
+                    "text": "Vincent van Gogh",
+                    "isCorrect": false
+                },
+                {
+                    "id": 1,
+                    "text": "Leonardo da Vinci",
+                    "isCorrect": true
+                },
+                {
+                    "id": 2,
+                    "text": "Pablo Picasso",
+                    "isCorrect": false
+                },
+                {
+                    "id": 3,
+                    "text": "Michelangelo",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "text": "Which gas makes up the majority of Earth's atmosphere?",
+            "options": [
+                {
+                    "id": 0,
+                    "text": "Oxygen",
+                    "isCorrect": false
+                },
+                {
+                    "id": 1,
+                    "text": "Carbon dioxide",
+                    "isCorrect": false
+                },
+                {
+                    "id": 2,
+                    "text": "Nitrogen",
+                    "isCorrect": true
+                },
+                {
+                    "id": 3,
+                    "text": "Helium",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "text": "What is the largest mammal in the world?",
+            "options": [
+                {
+                    "id": 0,
+                    "text": "Elephant",
+                    "isCorrect": false
+                },
+                {
+                    "id": 1,
+                    "text": "Giraffe",
+                    "isCorrect": false
+                },
+                {
+                    "id": 2,
+                    "text": "Blue whale",
+                    "isCorrect": true
+                },
+                {
+                    "id": 3,
+                    "text": "Hippopotamus",
+                    "isCorrect": false
+                }
+            ]
+        }
+    ]
+}
