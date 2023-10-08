@@ -249,6 +249,256 @@
                     "isCorrect": false
                 }
             ]
+        },
+        {
+            "options": [
+                {
+                    "id": 2,
+                    "isCorrect": false,
+                    "text": "19"
+                },
+                {
+                    "id": 1,
+                    "isCorrect": false,
+                    "text": "24"
+                },
+                {
+                    "id": 3,
+                    "isCorrect": true,
+                    "text": "27"
+                },
+                {
+                    "id": 0,
+                    "isCorrect": false,
+                    "text": "29"
+                }
+            ],
+            "text": "What is the result of 91 - 64?"
+        },
+        {
+            "options": [
+                {
+                    "id": 3,
+                    "isCorrect": true,
+                    "text": "5148"
+                },
+                {
+                    "id": 0,
+                    "isCorrect": false,
+                    "text": "5149"
+                },
+                {
+                    "id": 1,
+                    "isCorrect": false,
+                    "text": "5146"
+                },
+                {
+                    "id": 2,
+                    "isCorrect": false,
+                    "text": "5150"
+                }
+            ],
+            "text": "What is the result of 99 * 52?"
+        },
+        {
+            "options": [
+                {
+                    "id": 1,
+                    "isCorrect": false,
+                    "text": "6279"
+                },
+                {
+                    "id": 3,
+                    "isCorrect": true,
+                    "text": "6270"
+                },
+                {
+                    "id": 0,
+                    "isCorrect": false,
+                    "text": "6271"
+                },
+                {
+                    "id": 2,
+                    "isCorrect": false,
+                    "text": "6275"
+                }
+            ],
+            "text": "What is the result of 66 * 95?"
+        },
+        {
+            "options": [
+                {
+                    "id": 0,
+                    "isCorrect": false,
+                    "text": "125"
+                },
+                {
+                    "id": 2,
+                    "isCorrect": false,
+                    "text": "118"
+                },
+                {
+                    "id": 1,
+                    "isCorrect": false,
+                    "text": "131"
+                },
+                {
+                    "id": 3,
+                    "isCorrect": true,
+                    "text": "128"
+                }
+            ],
+            "text": "What is the result of 70 + 58?"
+        },
+        {
+            "options": [
+                {
+                    "id": 1,
+                    "isCorrect": false,
+                    "text": "2"
+                },
+                {
+                    "id": 2,
+                    "isCorrect": false,
+                    "text": "7"
+                },
+                {
+                    "id": 3,
+                    "isCorrect": true,
+                    "text": "1"
+                },
+                {
+                    "id": 0,
+                    "isCorrect": false,
+                    "text": "9"
+                }
+            ],
+            "text": "What is the result of 61 / 48?"
+        },
+        {
+            "options": [
+                {
+                    "id": 0,
+                    "isCorrect": false,
+                    "text": "6795"
+                },
+                {
+                    "id": 3,
+                    "isCorrect": true,
+                    "text": "6789"
+                },
+                {
+                    "id": 1,
+                    "isCorrect": false,
+                    "text": "6792"
+                },
+                {
+                    "id": 2,
+                    "isCorrect": false,
+                    "text": "6798"
+                }
+            ],
+            "text": "What is the result of 73 * 93?"
+        },
+        {
+            "options": [
+                {
+                    "id": 3,
+                    "isCorrect": true,
+                    "text": "9200"
+                },
+                {
+                    "id": 2,
+                    "isCorrect": false,
+                    "text": "9193"
+                },
+                {
+                    "id": 1,
+                    "isCorrect": false,
+                    "text": "9194"
+                },
+                {
+                    "id": 0,
+                    "isCorrect": false,
+                    "text": "9199"
+                }
+            ],
+            "text": "What is the result of 100 * 92?"
+        },
+        {
+            "options": [
+                {
+                    "id": 1,
+                    "isCorrect": false,
+                    "text": "2"
+                },
+                {
+                    "id": 0,
+                    "isCorrect": false,
+                    "text": "3"
+                },
+                {
+                    "id": 2,
+                    "isCorrect": false,
+                    "text": "-3"
+                },
+                {
+                    "id": 3,
+                    "isCorrect": true,
+                    "text": "0"
+                }
+            ],
+            "text": "What is the result of 15 / 22?"
+        },
+        {
+            "options": [
+                {
+                    "id": 0,
+                    "isCorrect": false,
+                    "text": "55"
+                },
+                {
+                    "id": 3,
+                    "isCorrect": true,
+                    "text": "45"
+                },
+                {
+                    "id": 1,
+                    "isCorrect": false,
+                    "text": "53"
+                },
+                {
+                    "id": 2,
+                    "isCorrect": false,
+                    "text": "55"
+                }
+            ],
+            "text": "What is the result of 94 - 49?"
+        },
+        {
+            "options": [
+                {
+                    "id": 3,
+                    "isCorrect": true,
+                    "text": "178"
+                },
+                {
+                    "id": 2,
+                    "isCorrect": false,
+                    "text": "187"
+                },
+                {
+                    "id": 1,
+                    "isCorrect": false,
+                    "text": "169"
+                },
+                {
+                    "id": 0,
+                    "isCorrect": false,
+                    "text": "168"
+                }
+            ],
+            "text": "What is the result of 97 + 81?"
         }
     ]
 }

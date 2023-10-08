@@ -2,6 +2,8 @@ import { useNavigate } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import Navbar from "./navbarpage";
 import Results from "./Result";
+import axios from "axios";
+
 function Quiz({ userName }) {
     // Properties (move these from the App component)
     const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -10,22 +12,31 @@ function Quiz({ userName }) {
     const navigate = useNavigate();
     const [data, setData] = useState([]);
 
-    useEffect(() => {
-        // Define the API URL
-        const apiUrl = "http://localhost:8000/questions"; // Replace with your API URL
 
-        // Make a GET request to the API using the fetch function
+    useEffect(() => {
+        // const apiUrl = "api/generate-math-problems";
+        const apiUrl = "http://localhost:3002/api/generate-ratio-problems";
         fetch(apiUrl)
-            .then((response) => response.json()) // Parse the response as JSON
+            .then((response) => {
+                // if (response) console.log(response.length);
+                if (!response.ok) {
+                    throw new Error("Network response was not ok");
+                }
+                return response.json();
+            })
             .then((apiData) => {
                 // Update the state variable with the fetched data
                 setData(apiData);
             })
             .catch((error) => {
                 console.error("Error fetching data:", error);
+                // Handle the error, e.g., show an error message to the user
             });
+
     }, []);
 
+
+    // console.log(data[0]);
     // Helper Functions (move these from the App component)
     const optionClicked = (isCorrect) => {
         // Increment the score
@@ -54,32 +65,30 @@ function Quiz({ userName }) {
         setShowResults(false); // Reset showResults state
         setCurrentQuestion(0);
         setScore(0);
-        navigate("/");
+        navigate("/topics");
     };
+
 
     // Add a conditional rendering section for results
     if (showResults) {
         return <Results score={score} totalQuestions={data.length} restartGame={restartGame} />;
-        // return (
-        //     <div className="final-results">
-        //         <h2>Quiz Results</h2>
-        //         <p>Your score: {score}</p>
-        //         <button onClick={restartGame}>Restart Quiz</button>
-        //     </div>
-        // );
     }
-    console.log(data.length)
+
     // console.log(data.length)
-    console.log(currentQuestion)
+    // console.log(currentQuestion)
 
     // Ensure that the currentQuestion is within the valid range
-    if (currentQuestion < 0 || currentQuestion >= data.length) {
-        return (
-            <div className="question-card">
-                <p>No more questions to display.</p>
-            </div>
-        );
-    }
+    // if (currentQuestion < 0 || currentQuestion >= data.length) {
+    //     return (
+    //         <>
+    //             <Navbar />
+    //             <h1 className="score">Not Available!!!</h1>
+    //             <div className="question-card">
+    //                 <p>No more questions to display.</p>
+    //             </div>
+    //         </>
+    //     );
+    // }
 
     // Ensure that the questions array is not empty
     if (data.length === 0) {
@@ -93,6 +102,18 @@ function Quiz({ userName }) {
     // Access the current question safely
     const currentQuestionData = data[currentQuestion];
 
+    if (!currentQuestionData || !currentQuestionData.options) {
+        return (
+            <>
+                <Navbar />
+                <h1 className="score">Not Available!!!</h1>
+                <div className="question-card">
+                    <p>Invalid question data.</p>
+                </div>
+            </>
+        );
+    }
+
     return (
         <>
             <Navbar />
@@ -100,12 +121,16 @@ function Quiz({ userName }) {
             <h1 className="quiztitle">Test Portal</h1>
 
             <div className="question-card">
+                {/* Timer */}
+                <div className="timer">
+                    {/* <p>Time left: {timer} seconds</p> */}
+                </div>
                 <h2 className="score"> {userName} </h2>
                 <br />
                 <h2 className="score">Score: {score}</h2>
                 {/* Current Question */}
                 <h2>
-                    {currentQuestion + 1} . {currentQuestionData.text}
+                    {currentQuestion + 1} . {currentQuestionData?.text}
                 </h2>
                 {/* <h3 className="question-text"></h3> */}
 
@@ -117,11 +142,12 @@ function Quiz({ userName }) {
                                 key={option.id}
                                 onClick={() => optionClicked(option.isCorrect)}
                             >
-                                {option.text}
+                                {option?.text}
                             </li>
                         );
                     })}
                 </ul>
+                {/* <button onClick={startTimer}>Start Timer</button> */}
                 <button onClick={quit}>Quit</button>
             </div >
         </>

@@ -181,3 +181,76 @@ button {
 .quiztitle{
   text-align: center;
 }
+
+.ranking-container {
+  background-color: rgb(149, 207, 255);
+  text-align: center; /* Center the h1 element */
+  padding: 20px;
+  margin:10%;
+  border-radius: 10px;
+}
+
+.score {
+  font-size: 24px; /* Adjust the font size as needed */
+}
+
+.ranking-list {
+  list-style: none;
+  /* border-radius: 10px; */
+  /* background-color: aquamarine; */
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center items horizontally */
+}
+
+
+/* 
+.ranking-list {
+  list-style: none;
+  background-color: aquamarine;
+  padding: 0;
+} */
+
+.ranking-item {
+  color:white;
+  background-color: rgb(11, 65, 126);
+  border: none;
+  width: 80%;
+  display: flex;
+  justify-content: space-around; 
+  /* margin: 10px 0; */
+  padding: 10px;
+}
+
+
+.player-score {
+  padding-right: 5%;
+  margin-left: 20px; /* Add spacing between name and score */
+}
+
+
+.topics-page {
+  padding: 20px;
+}
+
+.topics-grid {
+  margin: 0 auto;
+  width: 60%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  justify-content: center;
+}
+
+.topic {
+  border: 1px solid rgb(11, 65, 126);
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+}
+
+.topic img {
+  max-width: 100%;
+  height: auto;
+}

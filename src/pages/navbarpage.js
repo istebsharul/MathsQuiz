@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Link } from "react-router-dom";
+
 import "../App.css"; // Import your CSS file
 
 function Navbar() {
@@ -12,10 +13,10 @@ function Navbar() {
                     <Link to="/">Home</Link>
                 </li>
                 <li className="nav-item">
-                    <Link to="/about">About</Link>
+                    <Link to="/ranking">Ranking</Link>
                 </li>
                 <li className="nav-item">
-                    <Link to="/contact">Contact</Link>
+                    <Link to="/">Logout</Link>
                 </li>
             </ul>
         </nav>

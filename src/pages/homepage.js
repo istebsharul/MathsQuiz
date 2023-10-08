@@ -13,7 +13,7 @@ function HomePage({ onStartTest }) {
         // Call the onStartTest function and pass the entered name
         if (name.trim() !== "") {
             onStartTest(name);
-            navigate("/quiz");
+            navigate("/topics");
         } else {
             alert("Please Enter Your Name to Continue");
         }
