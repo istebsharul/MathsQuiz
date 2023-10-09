@@ -1,27 +1,30 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import Navbar from "./navbarpage";
 import Results from "./Result";
 import axios from "axios";
 
-function Quiz({ userName }) {
+function Quiz() {
     // Properties (move these from the App component)
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [score, setScore] = useState(0);
     const [showResults, setShowResults] = useState(false);
     const navigate = useNavigate();
     const [data, setData] = useState([]);
-
+    const { topicName } = useParams();
 
     useEffect(() => {
-        const apiUrl = "http://127.0.0.1:5000/api/generate-fraction-problems";
+        // Access the topicName from route parameters
+        const apiUrl = `http://127.0.0.1:5000/api/generate-${topicName}-problems`;
+        // const apiUrl = "http://127.0.0.1:5000/api/generate-fraction-problems";
+        console.log(topicName);
         axios.get(apiUrl).then((response) => {
             console.log(response.data.questions);
             setData(response.data.questions);
         }).catch((error) => {
             console.log(error);
         })
-    }, [])
+    }, [topicName])
 
     // console.log(data[0]);
     // Helper Functions (move these from the App component)
