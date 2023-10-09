@@ -14,27 +14,14 @@ function Quiz({ userName }) {
 
 
     useEffect(() => {
-        // const apiUrl = "api/generate-math-problems";
-        const apiUrl = "http://localhost:3002/api/generate-ratio-problems";
-        fetch(apiUrl)
-            .then((response) => {
-                // if (response) console.log(response.length);
-                if (!response.ok) {
-                    throw new Error("Network response was not ok");
-                }
-                return response.json();
-            })
-            .then((apiData) => {
-                // Update the state variable with the fetched data
-                setData(apiData);
-            })
-            .catch((error) => {
-                console.error("Error fetching data:", error);
-                // Handle the error, e.g., show an error message to the user
-            });
-
-    }, []);
-
+        const apiUrl = "http://127.0.0.1:5000/api/generate-fraction-problems";
+        axios.get(apiUrl).then((response) => {
+            console.log(response.data.questions);
+            setData(response.data.questions);
+        }).catch((error) => {
+            console.log(error);
+        })
+    }, [])
 
     // console.log(data[0]);
     // Helper Functions (move these from the App component)
@@ -61,10 +48,11 @@ function Quiz({ userName }) {
     };
 
     const quit = () => {
-        // ... (same restartGame function)
+        // (same restartGame function)
         setShowResults(false); // Reset showResults state
         setCurrentQuestion(0);
         setScore(0);
+        // localStorage.removeItem("username");
         navigate("/topics");
     };
 
@@ -77,18 +65,6 @@ function Quiz({ userName }) {
     // console.log(data.length)
     // console.log(currentQuestion)
 
-    // Ensure that the currentQuestion is within the valid range
-    // if (currentQuestion < 0 || currentQuestion >= data.length) {
-    //     return (
-    //         <>
-    //             <Navbar />
-    //             <h1 className="score">Not Available!!!</h1>
-    //             <div className="question-card">
-    //                 <p>No more questions to display.</p>
-    //             </div>
-    //         </>
-    //     );
-    // }
 
     // Ensure that the questions array is not empty
     if (data.length === 0) {
@@ -125,7 +101,9 @@ function Quiz({ userName }) {
                 <div className="timer">
                     {/* <p>Time left: {timer} seconds</p> */}
                 </div>
-                <h2 className="score"> {userName} </h2>
+
+                <h2 className="score"> {localStorage.getItem("username") ? localStorage.getItem("username") : ""} </h2>
+                {/* {console.log("userName: ", userName)}; */}
                 <br />
                 <h2 className="score">Score: {score}</h2>
                 {/* Current Question */}

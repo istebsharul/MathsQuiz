@@ -4,7 +4,6 @@ import Topic from '../components/Topics';
 import Navbar from './navbarpage';
 
 
-
 const TopicsPage = () => {
     const topics = [
         { name: 'Topic 1', imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCDOYMg9uA-VR2LrQb9kJWeuwOu1r7NcJGa17fF7X6rVmeiIIpxgfOG44vETlMwhcWrIM&usqp=CAU' },
@@ -23,7 +22,7 @@ const TopicsPage = () => {
         <>
             <Navbar />
             <div className="topics-page">
-                <h1 className="quiztitle">Topics Page</h1>
+                <h1 className="quiztitle">Topics</h1>
                 <div className="topics-grid">
                     {topics.map((topic, index) => (
                         <div onClick={handleTopicClick}>

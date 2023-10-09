@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 function HomePage({ onStartTest }) {
-    const [name, setName] = useState("");
+    const [name, setName] = useState(localStorage.getItem("username") ? localStorage.getItem("username") : "");
     const navigate = useNavigate();
 
     const handleNameChange = (e) => {
+        localStorage.setItem("username", e.target.value);
         setName(e.target.value);
     };
 
